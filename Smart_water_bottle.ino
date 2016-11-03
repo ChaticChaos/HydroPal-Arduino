@@ -11,6 +11,7 @@ void flow () // Interrupt function
 void setup()
 {
    pinMode(flowsensor, INPUT);
+   pinMode(LED_Builtin, OUTPUT);
    digitalWrite(flowsensor, HIGH); // Optional Internal Pull-Up
    Serial.begin(9600);
    attachInterrupt(0, flow, RISING); // Setup Interrupt
@@ -38,4 +39,17 @@ void loop ()
         Serial.println(" ml consumed");
       }
    }
+   //detect change
+   if (total_water >= 2000)
+   // led light 5 on
+   else if (total_water >= 1600)
+   // led light 4 on
+   else if (total_water >= 1200)
+   // led light 3 on
+   else if (total_water >= 800)
+   // led light 2 on
+   else if (total_water >= 400)
+    // led light 1 on
+   //turn on required leds
+   
 }
